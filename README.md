@@ -44,7 +44,7 @@ bitbake core-image-base
 
 The project includes custom WiFi configuration in the meta-custom layer. 
 
-**Note**: WiFi credentials are not included in this repository for security reasons. You'll need to set up your own WiFi credentials in:
+**Note**: You'll need to set up your own WiFi credentials in:
 ```
 meta-custom/recipes-connectivity/wifi-config/files/wpa_supplicant-wlan0.conf
 ```
@@ -60,7 +60,3 @@ A template file is provided at `meta-custom/recipes-connectivity/wifi-config/fil
 ## License
 
 This project is distributed under the MIT license.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
