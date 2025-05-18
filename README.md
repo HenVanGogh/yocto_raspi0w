@@ -1,6 +1,6 @@
 # Raspberry Pi Zero W Yocto Project
 
-This repository contains a customized Yocto Project for Raspberry Pi Zero W, with WiFi connectivity and other optimizations.
+This repository contains a basic WiFi Yocto setup for Raspberrypi zero w
 
 ## Project Structure
 
