@@ -1,0 +1,35 @@
+# Yocto build directories
+/build/tmp/
+/build/sstate-cache/
+/build/cache/
+
+# Downloaded source code
+/build/downloads/
+
+# Build logs
+*.log
+*.log.*
+/build/buildhistory/
+
+# Temp files
+*~
+.*.swp
+.*.swo
+
+# Configuration backups
+/build/conf/local.conf.sample
+/build/conf/bblayers.conf.sample
+
+# Other common ignored files
+.DS_Store
+Thumbs.db
+
+# Sensitive information
+meta-custom/recipes-connectivity/wifi-config/files/wpa_supplicant-wlan0.conf
+
+# Keep configuration files
+!/build/conf/local.conf
+!/build/conf/bblayers.conf
+
+# Docker related files
+.container_*
