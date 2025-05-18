@@ -21,7 +21,7 @@ This repository contains a customized Yocto Project for Raspberry Pi Zero W, wit
 
 1. Clone this repository:
 ```bash
-git clone <your-repo-url> yocto_raspi0w
+git clone https://github.com/HenVanGogh/yocto_raspi0w.git yocto_raspi0w
 cd yocto_raspi0w
 ```
 
