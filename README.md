@@ -31,7 +31,7 @@ cd yocto_raspi0w
 ```
 This script will:
 - Clone the meta-raspberrypi and oe-core (Poky) layers with the correct versions
-- Apply necessary patches to the meta-raspberrypi layer (easy and dirty fix for this [issue](https://lists.yoctoproject.org/g/yocto/topic/wireless_interface_wlan_not/103150047))
+- Apply necessary patches to the meta-raspberrypi layer (dirty fix for this [issue](https://lists.yoctoproject.org/g/yocto/topic/wireless_interface_wlan_not/103150047))
 - Create the build directory structure
 
 3. Run the build environment in Docker (optional):
