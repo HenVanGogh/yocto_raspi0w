@@ -2,6 +2,7 @@
 /build/tmp/
 /build/sstate-cache/
 /build/cache/
+/build/bitbake-cookerdaemon.log
 
 # Downloaded source code
 /build/downloads/
@@ -16,16 +17,13 @@
 .*.swp
 .*.swo
 
-# Configuration backups
-/build/conf/local.conf.sample
-/build/conf/bblayers.conf.sample
-
-# Other common ignored files
-.DS_Store
-Thumbs.db
-
 # Sensitive information
 meta-custom/recipes-connectivity/wifi-config/files/wpa_supplicant-wlan0.conf
+
+# External layers - these will be managed by the setup script
+/meta-raspberrypi/
+/oe-core/
+/.meta-backup/
 
 # Keep configuration files
 !/build/conf/local.conf
