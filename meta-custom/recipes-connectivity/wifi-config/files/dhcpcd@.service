@@ -1,0 +1,18 @@
+[Unit]
+Description=DHCP Client Daemon on %I
+Requires=wpa_supplicant@%i.service
+After=wpa_supplicant@%i.service
+Before=network.target
+Wants=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/dhcpcd-%I.pid
+ExecStartPre=/usr/bin/sleep 5
+ExecStart=/usr/sbin/dhcpcd -q -b %I
+ExecStop=/usr/sbin/dhcpcd -x %I
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
