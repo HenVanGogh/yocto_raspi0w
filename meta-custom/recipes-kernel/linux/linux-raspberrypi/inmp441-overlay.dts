@@ -1,0 +1,50 @@
+// INMP441 I2S MEMS Microphone Device Tree Overlay
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2835";
+
+    fragment@0 {
+        target = <&i2s>;
+        __overlay__ {
+            status = "okay";
+        };
+    };
+
+    fragment@1 {
+        target-path = "/";
+        __overlay__ {
+            inmp441_codec: inmp441-codec {
+                #sound-dai-cells = <0>;
+                compatible = "invensense,inmp441";
+                status = "okay";
+            };
+        };
+    };
+
+    fragment@2 {
+        target = <&sound>;
+        __overlay__ {
+            compatible = "simple-audio-card";
+            simple-audio-card,name = "INMP441";
+            status = "okay";
+            
+            simple-audio-card,dai-link@0 {
+                format = "i2s";
+                bitclock-master = <&dailink0_master>;
+                frame-master = <&dailink0_master>;
+
+                dailink0_master: cpu {
+                    sound-dai = <&i2s>;
+                    dai-tdm-slot-num = <2>;
+                    dai-tdm-slot-width = <32>;
+                };
+
+                codec {
+                    sound-dai = <&inmp441_codec>;
+                };
+            };
+        };
+    };
+};
