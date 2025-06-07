@@ -23,7 +23,8 @@ PREFERRED_PROVIDER_virtual/base-utils = "busybox"
 PREFERRED_PROVIDER_virtual/sh = "bash"
 
 # Make sure module autoloads properly
-KERNEL_MODULE_AUTOLOAD:rpi += "brcmfmac snd-soc-simple-card snd-soc-bcm2835-i2s"
+KERNEL_MODULE_AUTOLOAD:rpi += "brcmfmac"
+KERNEL_MODULE_AUTOLOAD:append = " snd-soc-simple-card snd-soc-bcm2835-i2s"
 
 # Clean up conflicting packages if they're installed
 
