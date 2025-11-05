@@ -37,6 +37,19 @@ else
     echo "oe-core directory already exists, skipping clone..."
 fi
 
+# Clone meta-openembedded if it doesn't exist (required for camera support)
+if [ ! -d "meta-openembedded" ]; then
+    echo "Cloning meta-openembedded layer (for camera/Python/multimedia support)..."
+    git clone git://git.openembedded.org/meta-openembedded
+    cd meta-openembedded
+    # Checkout the scarthgap branch to match other layers
+    git checkout scarthgap
+    cd ..
+    echo "meta-openembedded layer setup completed!"
+else
+    echo "meta-openembedded directory already exists, skipping clone..."
+fi
+
 echo "Applying necessary patches to meta layers..."
 if [ -f "meta-raspberrypi/conf/machine/include/rpi-base.inc" ]; then
     echo "Patching rpi-base.inc to add essential kernel modules and udev rules..."
